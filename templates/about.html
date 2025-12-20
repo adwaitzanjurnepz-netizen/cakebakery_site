@@ -1,0 +1,153 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About Us | Sweet Cravings</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+             /* Dark Mode */
+    body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+    }
+
+    body.dark-mode .card,
+    body.dark-mode .feature-box,
+    body.dark-mode .testimonial-box
+    {
+        background-color: #1e1e1e;
+        color: #eaeaea;
+    }
+
+    body.dark-mode .navbar 
+    {
+    background-color: #000 !important;
+    }
+
+    body.dark-mode footer 
+    {
+    background: #000;
+    }
+    /* Mobile UI Improvements */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+
+    .hero .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .navbar .btn {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        padding-top: 10px;
+    }
+}
+ </style>
+        
+    </head>
+    <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">Sweet Cravings</a>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/products/">Products</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about/">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/help/">Contact</a>
+                    </li>
+
+                    <!-- Dark Mode Toggle -->
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <button class="btn btn-outline-light btn-sm"
+                                id="darkModeToggle"
+                                aria-label="Toggle dark mode">
+                            🌙
+                        </button>
+                    </li>
+
+                    <!-- Cart Button -->
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a href="/cart/" class="btn btn-warning btn-sm">
+                            🛒 Cart
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">About Sweet Cravings</h2>
+        <p class="text-center">
+            Sweet Cravings Bakery was founded with one mission — to spread happiness through freshly baked goods.
+            We specialize in cakes, pastries, bread, and custom desserts made with premium ingredients.
+        </p>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h4>Why Choose Us?</h4>
+                <ul>
+                    <li>Freshly baked every day</li>
+                    <li>Custom cake designs</li>
+                    <li>Affordable prices</li>
+                    <li>Hygienic preparation</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" class="img-fluid rounded">
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center p-3">
+        © 2025 Sweet Cravings Bakery
+    </footer>
+    <script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        toggleBtn.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+</script>
+
+    </body>
+    </html>

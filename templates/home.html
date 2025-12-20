@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweet Cravings Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <meta name="description" content="Sweet Cravings Bakery – Fresh cakes, pastries, breads & cookies baked daily with love.">
+    <meta name="keywords" content="bakery, cakes, pastries, fresh bread, desserts">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            padding-top: 70px;
+            background-color: #fafafa;
+        }
+
+        /* Hero */
+        .hero {
+             background: url("https://eyesonly.nyc3.cdn.digitaloceanspaces.com/cache/32/73/32733eea0dd7ae9e1dabb084f60ad4e3.jpg")
+                center/cover no-repeat;
+            height: 80vh;
+            color: white;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6));
+            height: 100%;
+        }
+
+        /* Cards & Small Divs */
+        .card,
+        .feature-box,
+        .testimonial-box {
+            background-color: #fff8f5;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover,
+        .feature-box:hover,
+        .testimonial-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #3e2723, #5d4037);
+            color: white;
+        }
+        /* Dark Mode */
+    body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+    }
+
+    body.dark-mode .card,
+    body.dark-mode .feature-box,
+    body.dark-mode .testimonial-box
+    {
+        background-color: #1e1e1e;
+        color: #eaeaea;
+    }
+
+    body.dark-mode .navbar 
+    {
+    background-color: #000 !important;
+    }
+
+    body.dark-mode footer 
+    {
+    background: #000;
+    }
+    /* Mobile UI Improvements */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+
+    .hero .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .navbar .btn {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        padding-top: 10px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">Sweet Cravings</a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/products/">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/help/">Contact</a>
+                </li>
+
+                <!-- Dark Mode Toggle -->
+                <li class="nav-item mt-2 mt-lg-0">
+                    <button class="btn btn-outline-light btn-sm"
+                            id="darkModeToggle"
+                            aria-label="Toggle dark mode">
+                        🌙
+                    </button>
+                </li>
+
+                <!-- Cart Button -->
+                <li class="nav-item mt-2 mt-lg-0">
+                    <a href="/cart/" class="btn btn-warning btn-sm">
+                        🛒 Cart
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-overlay d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Fresh Cakes & Bakery Delights</h1>
+            <p class="lead mb-4">Baked with love, served with happiness ❤️</p>
+
+            <a href="/products/" class="btn btn-warning btn-lg me-3">
+                Order Now
+            </a>
+
+            <button class="btn btn-outline-light btn-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#offerModal">
+                View Offers
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Our Best Sellers</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card text-center p-3">
+                <img src="https://theobroma.in/cdn/shop/files/EgglessDutchTruffleCakehalfkg.jpg" alt="Chocolate Cake" loading="lazy">
+                <h5 class="fw-bold mt-3">Chocolate Cake</h5>
+                <p>Rich & creamy chocolate delight</p>
+                <button class="btn btn-primary"
+                        aria-label="Add Chocolate Cake to cart"
+                        data-product-id="1">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center p-3">
+                <img src="https://cdn.uengage.io/uploads/7175/image-Q8QYX6-1706080811.jpg" alt="Strawberry Pastry" loading="lazy">
+                <h5 class="fw-bold mt-3">Strawberry Pastry</h5>
+                <p>Fresh strawberries & whipped cream</p>
+                <button class="btn btn-primary"
+                        aria-label="Add Strawberry Pastry to cart"
+                        data-product-id="2">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center p-3">
+                <img src="https://www.disgracesonthemenu.com/wp-content/uploads/2020/02/sourdough_wp.jpg" alt="Fresh Bread" loading="lazy">
+
+                <h5 class="fw-bold mt-3">Fresh Bread</h5>
+                <p>Soft & healthy baked bread</p>
+                <button class="btn btn-primary"
+                        aria-label="Add Fresh Bread to cart"
+                        data-product-id="3">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">Why Choose Sweet Cravings?</h2>
+
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="feature-box p-4 h-100">
+                <h4>🍰 Freshly Baked</h4>
+                <p>All products baked fresh every morning.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="feature-box p-4 h-100">
+                <h4>❤️ Made with Love</h4>
+                <p>Handcrafted by expert bakers.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="feature-box p-4 h-100">
+                <h4>🚚 Fast Delivery</h4>
+                <p>Quick & safe delivery guaranteed.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container my-5">
+    <h2 class="text-center fw-bold mb-4">What Our Customers Say</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="testimonial-box p-4 h-100">
+                <p>“Absolutely the best cakes in town!”</p>
+                <strong>— Priya S.</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="testimonial-box p-4 h-100">
+                <p>“Bread stays fresh for days.”</p>
+                <strong>— Rahul K.</strong>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="testimonial-box p-4 h-100">
+                <p>“Perfect for celebrations!”</p>
+                <strong>— Ananya M.</strong>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-dark text-light py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Ready to Satisfy Your Sweet Cravings?</h2>
+        <p class="mb-4">Order your favorite treats today.</p>
+        <a href="/products/" class="btn btn-warning btn-lg">
+            Explore Products
+        </a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center p-4">
+    <p class="mb-0">© 2025 Sweet Cravings Bakery | Freshly Baked Every Day</p>
+</footer>
+
+<!-- Offer Modal -->
+<div class="modal fade" id="offerModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Special Offer 🎉</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Get <strong>20% OFF</strong> on all cakes this weekend!</p>
+                <a href="/products/" class="btn btn-success">Shop Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        toggleBtn.textContent =
+            document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    });
+</script>
+
+
+</body>
+</html>

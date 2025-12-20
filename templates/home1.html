@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sweet Cravings Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .hero {
+            background: url('https://eyesonly.nyc3.cdn.digitaloceanspaces.com/cache/32/73/32733eea0dd7ae9e1dabb084f60ad4e3.jpg') center/cover no-repeat;
+            height: 80vh;
+            color: white;
+        }
+        .hero-overlay {
+            background-color: rgba(0,0,0,0.6);
+            height: 100%;
+        }
+        .product-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        footer {
+            background: #3e2723;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Sweet Cravings</a>
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/products/">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/help/">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero mt-5">
+    <div class="hero-overlay d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4">Fresh Cakes & Bakery Delights</h1>
+            <p class="lead">Baked with love, served with happiness ❤️</p>
+            <button class="btn btn-warning btn-lg me-2" onclick="goToProducts()">Order Now</button>
+            <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#offerModal">
+                View Offers
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Our Best Sellers</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img src="//theobroma.in/cdn/shop/files/EgglessDutchTruffleCakehalfkg.jpg?v=1711125279" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Chocolate Cake</h5>
+                    <p>Rich & creamy chocolate delight</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img src="https://cdn.uengage.io/uploads/7175/image-Q8QYX6-1706080811.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Strawberry Pastry</h5>
+                    <p>Fresh strawberries & whipped cream</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card product-card">
+                <img src="https://www.disgracesonthemenu.com/wp-content/uploads/2020/02/sourdough_wp.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5>Fresh Bread</h5>
+                    <p>Soft & healthy baked bread</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Carousel -->
+<section class="container my-5">
+    <h2 class="text-center mb-4">Customer Favorites</h2>
+    <div id="bakeryCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1612197527276-3a2f3f3b4e1a" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1601972599720-3c26f1e8c5c1" class="d-block w-100">
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-target="#bakeryCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#bakeryCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center p-4">
+    <p>© 2025 Sweet Cravings Bakery | Freshly Baked Every Day</p>
+</footer>
+
+<!-- Offer Modal -->
+<div class="modal fade" id="offerModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5>Special Offer 🎉</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Get <strong>20% OFF</strong> on all cakes this weekend!</p>
+                <button class="btn btn-success" onclick="goToProducts()">Shop Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript -->
+<script>
+    function goToProducts() {
+        window.location.href = "products.html";
+    }
+</script>
+
+</body>
+</html>
