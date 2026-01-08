@@ -56,7 +56,35 @@
     .navbar-nav {
         padding-top: 10px;
     }
-}
+    .about-hero {
+    background: linear-gradient(135deg, #f8d7da, #fff);
+    border-radius: 16px;
+    padding: 40px;
+    }
+
+    .about-img {
+        max-width: 260px;
+        border-radius: 50%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .feature-card {
+        border: none;
+        border-radius: 14px;
+        padding: 20px;
+        height: 100%;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    body.dark-mode .about-hero {
+        background: linear-gradient(135deg, #1f1f1f, #121212);
+    }
+
+    body.dark-mode .feature-card {
+        background-color: #1e1e1e;
+    }
+
+    }
  </style>
         
     </head>
@@ -114,28 +142,54 @@
     </nav>
 
     <!-- About Section -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">About Sweet Cravings</h2>
-        <p class="text-center">
-            Sweet Cravings Bakery was founded with one mission — to spread happiness through freshly baked goods.
-            We specialize in cakes, pastries, bread, and custom desserts made with premium ingredients.
+    <section class="container my-5 pt-5">
+    <div class="about-hero text-center mb-5">
+        <h2 class="fw-bold">About Sweet Cravings</h2>
+        <p class="mt-3">
+            Sweet Cravings Bakery was founded with one simple goal —
+            <strong>to bring joy through handcrafted, freshly baked desserts.</strong>
+            Every item we make is a blend of passion, quality ingredients, and love.
         </p>
 
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h4>Why Choose Us?</h4>
-                <ul>
-                    <li>Freshly baked every day</li>
-                    <li>Custom cake designs</li>
-                    <li>Affordable prices</li>
-                    <li>Hygienic preparation</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" class="img-fluid rounded">
+        <div class="d-flex justify-content-center mt-4">
+            <img
+                src="https://images.unsplash.com/photo-1542826438-bd32f43d626f"
+                alt="Bakery"
+                class="about-img img-fluid"
+            >
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card text-center">
+                <h5 class="fw-bold">🥖 Freshly Baked</h5>
+                <p class="mt-2">
+                    All our products are baked daily using premium-quality ingredients.
+                </p>
             </div>
         </div>
-    </section>
+
+        <div class="col-md-4">
+            <div class="feature-card text-center">
+                <h5 class="fw-bold">🎂 Custom Creations</h5>
+                <p class="mt-2">
+                    From birthdays to weddings, we craft desserts tailored to your moments.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="feature-card text-center">
+                <h5 class="fw-bold">❤️ Made With Care</h5>
+                <p class="mt-2">
+                    Hygiene, consistency, and customer satisfaction are our top priorities.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <footer class="bg-dark text-white text-center p-3">
         © 2025 Sweet Cravings Bakery
