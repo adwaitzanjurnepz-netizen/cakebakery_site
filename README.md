@@ -1,10 +1,13 @@
 # Django Practice Project
 
 ## Overview
-This repository contains a **Django-based practice project** developed for learning and skill enhancement.  
-The project focuses on understanding **full-stack web development using Django**, including backend logic, frontend integration, and database usage.
+This repository contains a **Django-based practice project** developed to strengthen skills in full-stack web development using Django.  
+The project demonstrates backend logic, frontend integration, database connectivity, and deployment fundamentals.
 
-AI tools were **extensively used as a learning aid** throughout the development process to explore best practices, solve problems, and accelerate understanding of Django concepts.
+AI tools were **used as a learning aid** throughout development to explore best practices, debug issues, and improve understanding of Django concepts.
+
+🔗 **Live Demo:**  
+https://cakebakery-site.onrender.com/
 
 ---
 
@@ -12,10 +15,10 @@ AI tools were **extensively used as a learning aid** throughout the development 
 Through this project, I gained hands-on experience with:
 
 - Django **MVT (Model–View–Template) architecture**
-- Backend and frontend integration in Django
+- Backend and frontend integration using Django templates
 - URL routing and page-based views
-- Working with databases using Django ORM
-- Structuring and organizing Django projects
+- Working with relational databases via Django ORM
+- Project structuring and modular app design
 - Building responsive user interfaces
 
 ---
@@ -25,7 +28,8 @@ Through this project, I gained hands-on experience with:
 ### Backend
 - Python
 - Django
-- **SQLite** (default Django database)
+- PostgreSQL (production)
+- SQLite (local development)
 
 ### Frontend
 - HTML
@@ -39,23 +43,34 @@ Through this project, I gained hands-on experience with:
 The following pages were implemented as part of this project:
 
 - Home
-- Product
-- Contact
+- Product Listing
+- Product Detail
 - Cart
-- About Us
 - Checkout
+- About Us
+- Contact
 
-Each page demonstrates frontend design and backend connectivity using Django templates.
+Each page demonstrates frontend design combined with backend data handling using Django views and templates.
+
+---
+
+## Deployment
+The application is deployed using **Render**, with:
+
+- PostgreSQL as the production database
+- Gunicorn as the application server
+- Whitenoise for static file handling
+
+The deployed version reflects a complete development-to-deployment workflow.
 
 ---
 
 ## Disclaimer
-This project is **intended for educational purposes only** and is **not production-ready**.  
-The use of AI tools was limited to assistance in learning, debugging, and understanding implementation concepts.
+This project is **intended for educational and learning purposes only** and is **not production-ready**.  
+AI tools were used strictly for learning assistance, debugging, and conceptual understanding.
 
 ---
 
 ## Conclusion
-This project provided practical exposure to **Django full-stack development**, including database integration with SQLite and frontend–backend interaction.  
-It served as a strong foundation for understanding real-world Django applications.
-
+This project provided practical exposure to **end-to-end Django application development**, including deployment and production database usage.  
+It serves as a strong foundation for building scalable, real-world Django applications.
