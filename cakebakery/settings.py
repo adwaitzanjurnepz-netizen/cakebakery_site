@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+import os
+import dj_database_url
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -73,15 +74,10 @@ WSGI_APPLICATION = 'cakebakery.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-      'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '123adwait',
-        'HOST': 'localhost',   # or hosting DB host
-        'PORT': '5432',
-    }
+DATABASES =  {
+    'default': dj_database_url.config(
+        default='postgres://postgres:123adwait@localhost:5432/postgres'
+    )
 }
 
 
